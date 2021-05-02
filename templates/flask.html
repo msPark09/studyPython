@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>플라스크</title>
+</head>
+<body>
+    Hello<br/>
+    <h1>Flask</h1>
+
+    <div>{{ns}}</div> <!-- python 변수 값 전달, data 출력 -->
+
+    {% for i in ns %} <!-- python code 입력 : flask 문법 -->
+        <h4>{{i}}</h4>
+    {% endfor %} <!-- python code 입력 -->
+
+    <img src="{{url_for('static',filename='google.png')}}"><br>
+    <!--<img src="{{url_for('static',filename=img_name)}}">-->
+
+    <table>
+        {% for item in items %}
+            <!--{{item}}<br>-->
+        <tr>
+            {% for col in item%}
+            <td>{{col}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>
